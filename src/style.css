@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('./quickpen.woff2') format('woff2'),
+    url('./FuturaBT_LightItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+.color{
+  color: brown;
+  font-family: 'MyFont';
+  background: url('./icon.jpeg');
+}
