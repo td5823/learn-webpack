@@ -12,26 +12,25 @@ module.exports = {
   // 插件
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Caching',
+      title: '创建library',
     }),
   ],
   // 编译出口
   output: {
-    filename: '[name].[contenthash].js',
+    filename: 'webpack-numbers.js',
     path: path.resolve(__dirname, 'dist'),
+    library: {
+      name: 'webpackNumbers',
+      type: 'umd',
+    },
     clean: true,
   },
-  optimization: {
-    moduleIds: 'deterministic',
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
+  externals: {
+    lodash: {
+      commonjs: 'lodash',
+      commonjs2: 'lodash',
+      amd: 'lodash',
+      root: '_',
     },
   },
 };
